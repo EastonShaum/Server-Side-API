@@ -20,6 +20,7 @@ var formSubmitHandler = function(event) {
         // clear old content
         weatherContainerEl.textContent = "";
         cityInputEl.value = "";
+        renderButtons();
     } else {
         alert("Please enter a city");
     }
@@ -91,13 +92,14 @@ var displayWeatherNow = function(weather, searchTerm) {
     
     
 };
+
 var displayWeatherForecast = function(forecast, searchTerm) {
     
         console.log(forecast, "3")
         var forecastInfo = document.createElement("div")
-        for(let i = 4;i < 35 ;i+= 8){
+        for(let i = 4;i < 42 ;i+= 8){
             var forecastCard = document.createElement("div")
-            forecastCard.classList = "card"
+            forecastCard.classList = "card card-forecast"
 
             var date = forecast.list[i].dt_txt
             var view = (forecast.list[i].weather[0].main)
